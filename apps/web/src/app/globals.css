@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Brand tokens — mirrors packages/ui/tokens.ts */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-child: var(--font-baloo), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #1f2328;
+  --color-ground: #f6f3ee;
+  --color-surface: #ffffff;
+  --color-line: #ece7de;
+  --color-muted-text: #6b7280;
+
+  --color-orange: #f26b1d;
+  --color-orange-tint: #fbe4d6;
+  --color-orange-dark: #c9540f;
+
+  --color-blue: #1e6fe0;
+  --color-blue-tint: #e3edfb;
+
+  --color-success: #17a34a;
+  --color-success-tint: #e6f6ea;
+  --color-danger: #d8262b;
+  --color-danger-tint: #fdecec;
+  --color-warning: #ffb347;
+
+  --color-face: #16191d;
+
+  --radius-card-sm: 18px;
+  --radius-card: 20px;
+  --radius-card-lg: 24px;
+  --radius-btn-sm: 12px;
+  --radius-btn: 14px;
+  --radius-btn-lg: 16px;
+  --radius-pill: 999px;
+
+  --spacing-touch: 44px;
+  --spacing-kid: 56px;
+}
+
+/* shadcn/ui semantic variables mapped onto DuDu tokens */
+:root {
+  --radius: 14px;
+  --background: #f6f3ee;
+  --foreground: #1f2328;
+  --card: #ffffff;
+  --card-foreground: #1f2328;
+  --popover: #ffffff;
+  --popover-foreground: #1f2328;
+  --primary: #f26b1d;
+  --primary-foreground: #ffffff;
+  --secondary: #fbe4d6;
+  --secondary-foreground: #c9540f;
+  --muted: #f6f3ee;
+  --muted-foreground: #6b7280;
+  --accent: #e3edfb;
+  --accent-foreground: #1e6fe0;
+  --destructive: #d8262b;
+  --destructive-foreground: #ffffff;
+  --border: #ece7de;
+  --input: #ece7de;
+  --ring: #1e6fe0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+}

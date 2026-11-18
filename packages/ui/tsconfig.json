@@ -1,0 +1,8 @@
+{
+  "extends": "@dudu/config/tsconfig/base.json",
+  "compilerOptions": {
+    "lib": ["DOM", "ES2022"],
+    "jsx": "react-jsx"
+  },
+  "include": ["tokens.ts", "src/**/*"]
+}
