@@ -1,13 +1,29 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Baloo_2 } from "next/font/google";
+import { Inter, Baloo_2, Noto_Sans_Malayalam, Noto_Sans_Devanagari } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const baloo = Baloo_2({
-  subsets: ["latin"],
+  subsets: ["latin", "devanagari"],
   variable: "--font-baloo",
   display: "swap",
   weight: ["500", "700", "800"],
+});
+const malayalam = Noto_Sans_Malayalam({
+  subsets: ["malayalam"],
+  variable: "--font-ml",
+  display: "swap",
+  weight: ["400", "600", "800"],
+  preload: false,
+});
+const devanagari = Noto_Sans_Devanagari({
+  subsets: ["devanagari"],
+  variable: "--font-hi",
+  display: "swap",
+  weight: ["400", "600", "800"],
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -24,10 +40,16 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const locale = await getLocale();
   return (
-    <html lang="en" className={`${inter.variable} ${baloo.variable}`}>
-      <body className="min-h-dvh">{children}</body>
+    <html
+      lang={locale}
+      className={`${inter.variable} ${baloo.variable} ${malayalam.variable} ${devanagari.variable}`}
+    >
+      <body className="min-h-dvh">
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+      </body>
     </html>
   );
 }

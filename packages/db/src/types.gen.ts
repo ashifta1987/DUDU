@@ -114,6 +114,53 @@ export type Database = {
           },
         ];
       };
+      child_tokens: {
+        Row: {
+          id: string;
+          created_at: string;
+          updated_at: string;
+          child_id: string;
+          token_hash: string;
+          label: string | null;
+          created_by: string | null;
+          last_used_at: string | null;
+          expires_at: string;
+          revoked_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          created_at?: string;
+          updated_at?: string;
+          child_id: string;
+          token_hash: string;
+          label?: string | null;
+          created_by?: string | null;
+          last_used_at?: string | null;
+          expires_at?: string;
+          revoked_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          created_at?: string;
+          updated_at?: string;
+          child_id?: string;
+          token_hash?: string;
+          label?: string | null;
+          created_by?: string | null;
+          last_used_at?: string | null;
+          expires_at?: string;
+          revoked_at?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "child_tokens_child_id_fkey";
+            columns: ["child_id"];
+            isOneToOne: false;
+            referencedRelation: "children";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
       children: {
         Row: {
           id: string;
@@ -1160,14 +1207,18 @@ export type Database = {
       can_access_conversation: { Args: { cid: string }; Returns: boolean };
       can_access_device: { Args: { did: string }; Returns: boolean };
       has_role: { Args: { roles: Database["public"]["Enums"]["user_role"][] }; Returns: boolean };
+      hash_child_token: { Args: { p_token: string }; Returns: string };
       is_admin: { Args: Record<PropertyKey, never>; Returns: boolean };
       is_family_member: { Args: { fid: string }; Returns: boolean };
       is_family_owner: { Args: { fid: string }; Returns: boolean };
       is_service: { Args: Record<PropertyKey, never>; Returns: boolean };
       is_trusted: { Args: Record<PropertyKey, never>; Returns: boolean };
+      rpc_create_child_token: { Args: { p_child_id: string; p_label?: string }; Returns: Json };
       rpc_create_pairing_code: { Args: { p_device_id: string; p_ttl_minutes?: number }; Returns: Json };
       rpc_pair_device: { Args: { code_or_token: string; p_child_id?: string; p_family_id?: string }; Returns: Json };
       rpc_request_snapshot: { Args: { p_device_id: string }; Returns: string };
+      rpc_resolve_child_token: { Args: { p_token: string }; Returns: Json };
+      rpc_revoke_child_token: { Args: { p_token_id: string }; Returns: undefined };
       rpc_set_mode: { Args: { p_device_id: string; p_mode: Database["public"]["Enums"]["dudu_mode"]; p_until?: string }; Returns: Json };
       storage_family_id: { Args: { object_name: string }; Returns: string };
       today_ist: { Args: Record<PropertyKey, never>; Returns: string };

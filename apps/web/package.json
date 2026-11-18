@@ -9,17 +9,20 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "smoke:auth": "tsx scripts/smoke-auth.ts"
   },
   "dependencies": {
+    "@dudu/db": "workspace:*",
     "@dudu/ui": "workspace:*",
     "@radix-ui/react-slot": "^1.1.1",
-    "@supabase/ssr": "^0.5.2",
-    "@supabase/supabase-js": "^2.47.10",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.119.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.469.0",
     "next": "^15.1.3",
+    "next-intl": "^4.15.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "server-only": "^0.0.1",
@@ -33,6 +36,7 @@
     "@types/react-dom": "^19.0.2",
     "eslint": "^9.17.0",
     "tailwindcss": "^4.0.0",
+    "tsx": "^4.23.15",
     "tw-animate-css": "^1.2.5",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"

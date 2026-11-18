@@ -3,8 +3,11 @@
 
 /* Brand tokens — mirrors packages/ui/tokens.ts */
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-child: var(--font-baloo), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans:
+    var(--font-inter), var(--font-ml), var(--font-hi), ui-sans-serif, system-ui, sans-serif;
+  --font-child:
+    var(--font-baloo), var(--font-inter), var(--font-ml), var(--font-hi), ui-sans-serif, system-ui,
+    sans-serif;
 
   --color-ink: #1f2328;
   --color-ground: #f6f3ee;

@@ -126,7 +126,15 @@ export function buildSeed(opts: {
     city: "Thiruvananthapuram",
     locale: "ml",
   };
-  const users = [owner, p1, p1g, p2, p3];
+  // QA admin for automated tests (Playwright admin flow). Password login only, from SEED_TEST_PASSWORD.
+  const qa: SeedUser = {
+    id: seedId("user:qa-admin"),
+    email: "qa.admin@dudu.local",
+    full_name: "QA Admin",
+    role: "ops",
+    city: "Kochi",
+  };
+  const users = [owner, qa, p1, p1g, p2, p3];
 
   // ── Families & children ────────────────────────────────────────────────
   const F = {

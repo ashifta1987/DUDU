@@ -11,6 +11,7 @@ describe("migrations", () => {
       "ai_usage_daily",
       "audit_log",
       "child_stats",
+      "child_tokens",
       "children",
       "content_packs",
       "conversations",

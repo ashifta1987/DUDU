@@ -1,0 +1,158 @@
+{
+  "common": {
+    "appName": "DuDu",
+    "tagline": "आपका AI दोस्त",
+    "signOut": "साइन आउट",
+    "back": "वापस",
+    "language": "भाषा",
+    "save": "सेव करें",
+    "cancel": "रद्द करें",
+    "close": "बंद करें",
+    "loading": "लोड हो रहा है…",
+    "retry": "फिर से कोशिश करें",
+    "skipToContent": "सामग्री पर जाएँ",
+    "mainNav": "मुख्य नेविगेशन",
+    "account": "खाता"
+  },
+  "nav": {
+    "home": "होम",
+    "study": "पढ़ाई",
+    "reminders": "रिमाइंडर",
+    "monitor": "निगरानी",
+    "homework": "होमवर्क",
+    "report": "रिपोर्ट",
+    "library": "लाइब्रेरी",
+    "settings": "सेटिंग्स",
+    "more": "और"
+  },
+  "auth": {
+    "parentTitle": "DuDu में आपका स्वागत है",
+    "parentSubtitle": "अपने बच्चे के DuDu की देखभाल के लिए साइन इन करें।",
+    "phoneLabel": "मोबाइल नंबर",
+    "phonePlaceholder": "98765 43210",
+    "sendCode": "कोड भेजें",
+    "codeSentTo": "हमने {phone} पर 6 अंकों का कोड भेजा है।",
+    "codeLabel": "6 अंकों का कोड",
+    "verify": "जाँचें और आगे बढ़ें",
+    "changeNumber": "नंबर बदलें",
+    "resend": "कोड फिर से भेजें",
+    "resendIn": "{seconds} सेकंड में फिर से भेजें",
+    "or": "या",
+    "google": "Google से जारी रखें",
+    "invalidPhone": "सही 10 अंकों का भारतीय मोबाइल नंबर डालें।",
+    "invalidCode": "SMS में मिला 6 अंकों का कोड डालें।",
+    "genericError": "कुछ गड़बड़ हो गई। कृपया फिर से कोशिश करें।",
+    "terms": "आगे बढ़कर आप हमारी शर्तें और गोपनीयता नीति स्वीकार करते हैं।",
+    "devTitle": "डेवलपर साइन इन",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "signIn": "साइन इन",
+    "callbackError": "वह साइन इन लिंक काम नहीं किया। कृपया फिर से कोशिश करें।"
+  },
+  "home": {
+    "greetingMorning": "सुप्रभात, {name}",
+    "greetingAfternoon": "नमस्कार, {name}",
+    "greetingEvening": "शुभ संध्या, {name}",
+    "noFamilyTitle": "चलिए DuDu सेट करें",
+    "noFamilyBody": "बच्चे का दिन यहाँ देखने के लिए DuDu को जोड़ें।",
+    "pairCta": "DuDu जोड़ें",
+    "noDevice": "{name} के साथ अभी कोई DuDu नहीं जुड़ा है।",
+    "childSwitcher": "बच्चा",
+    "deviceTitle": "DuDu",
+    "status": {
+      "provisioned": "जुड़ा नहीं",
+      "paired": "जुड़ा हुआ",
+      "online": "ऑनलाइन",
+      "sleeping": "सो रहा है",
+      "offline": "ऑफ़लाइन"
+    },
+    "battery": "बैटरी",
+    "wifi": "वाई‑फ़ाई",
+    "volume": "आवाज़",
+    "wifiStrong": "मज़बूत",
+    "wifiGood": "अच्छा",
+    "wifiWeak": "कमज़ोर",
+    "mode": "मोड",
+    "modeStudy": "पढ़ाई",
+    "modeFun": "मस्ती",
+    "todayPlan": "आज की योजना",
+    "noSchedule": "आज कुछ भी तय नहीं है।",
+    "reminders": "रिमाइंडर",
+    "noReminders": "आज कोई रिमाइंडर नहीं।",
+    "stars": "सितारे",
+    "streak": "दिन लगातार",
+    "focusToday": "आज का ध्यान",
+    "minutes": "{n} मिनट",
+    "latestHomework": "ताज़ा होमवर्क",
+    "noHomework": "अभी तक कोई होमवर्क जाँचा नहीं गया।",
+    "result": {
+      "correct": "सही",
+      "retry": "फिर कोशिश करें",
+      "partial": "आंशिक रूप से सही",
+      "explained": "समझाया गया"
+    }
+  },
+  "pages": {
+    "study": {
+      "title": "पढ़ाई",
+      "description": "कक्षा और विषय, हफ़्ते के पढ़ाई के घंटे और फ़ोकस नियम।"
+    },
+    "reminders": {
+      "title": "रिमाइंडर",
+      "description": "आज के रिमाइंडर, साप्ताहिक टाइमटेबल और दोहराए जाने वाले रिमाइंडर।"
+    },
+    "monitor": {
+      "title": "निगरानी",
+      "description": "आज डेस्क पर उपस्थिति और माँगने पर ली गई फ़ोटो। DuDu हर फ़ोटो की घोषणा करता है।"
+    },
+    "homework": {
+      "title": "होमवर्क",
+      "description": "DuDu द्वारा जाँचा गया होमवर्क, समझाने और नतीजों के साथ।"
+    },
+    "report": {
+      "title": "साप्ताहिक रिपोर्ट",
+      "description": "पढ़ाई के मिनट, पूछे गए सवाल, क्विज़ स्कोर और सुझाव।"
+    },
+    "library": {
+      "title": "लाइब्रेरी",
+      "description": "कहानियाँ, संगीत और खेल जो DuDu चला सकता है।"
+    },
+    "settings": {
+      "title": "सेटिंग्स",
+      "description": "बच्चे की प्रोफ़ाइल, पैरेंटल कंट्रोल, डिवाइस और बिलिंग।"
+    },
+    "more": {
+      "title": "और",
+      "description": "DuDu ऐप में बाकी सब कुछ।"
+    },
+    "emptyTitle": "यहाँ अभी कुछ नहीं है",
+    "emptyBody": "जैसे-जैसे बच्चा DuDu इस्तेमाल करेगा, यह भर जाएगा।"
+  },
+  "kid": {
+    "welcomeTitle": "नमस्ते! मैं DuDu हूँ।",
+    "welcomeBody": "किसी बड़े से कहो कि इस स्क्रीन पर तुम्हारा DuDu लिंक खोलें।",
+    "invalidLink": "यह लिंक अब काम नहीं करता। किसी बड़े से नया लिंक माँगो।",
+    "hello": "नमस्ते {name}!",
+    "ready": "आज के मिशन के लिए तैयार हो?",
+    "mission": "आज का मिशन",
+    "quiz": "क्विज़ टाइम",
+    "quizBody": "सवालों के जवाब दो और सितारे जीतो।",
+    "homework": "मेरा होमवर्क",
+    "homeworkBody": "देखो DuDu ने क्या समझाया।",
+    "stars": "{n} सितारे",
+    "streak": "{n} दिन लगातार",
+    "badges": "बैज",
+    "notYou": "तुम नहीं हो? किसी बड़े से कहो",
+    "back": "वापस"
+  },
+  "pair": {
+    "title": "DuDu जोड़ें",
+    "description": "DuDu की स्क्रीन पर दिख रहा 6 अंकों का कोड डालें।",
+    "codeLabel": "पेयरिंग कोड",
+    "submit": "DuDu जोड़ें",
+    "invalid": "वह कोड काम नहीं किया। DuDu की स्क्रीन देखें — कोड 15 मिनट बाद समाप्त हो जाते हैं।",
+    "taken": "यह DuDu पहले से किसी दूसरे परिवार से जुड़ा है।",
+    "success": "DuDu जुड़ गया!",
+    "goHome": "होम पर जाएँ"
+  }
+}

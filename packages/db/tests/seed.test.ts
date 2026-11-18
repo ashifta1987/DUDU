@@ -18,6 +18,7 @@ describe("seed", () => {
 
     const count = async (sql: string) => Number((await db.query<{ n: number }>(sql)).rows[0]!.n);
     expect(await count("select count(*) n from public.profiles where role = 'owner'")).toBe(1);
+    expect(await count("select count(*) n from public.profiles where role = 'ops'")).toBe(1);
     expect(await count("select count(*) n from public.families")).toBe(3);
     expect(await count("select count(*) n from public.devices")).toBe(4);
     expect(await count("select count(distinct model) n from public.devices")).toBe(4);

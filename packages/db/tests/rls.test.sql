@@ -259,6 +259,78 @@ begin
 end $$;
 reset role;
 
+-- ── Child companion tokens ───────────────────────────────────────────────
+create temp table _kid (token text, id uuid);
+grant all on _kid to authenticated, service_role;
+
+select set_config('request.jwt.claims', '{"sub":"a0000000-0000-4000-8000-000000000001","role":"authenticated"}', true);
+set local role authenticated;
+do $$
+declare
+  t jsonb;
+begin
+  t := public.rpc_create_child_token('c0000000-0000-4000-8000-00000000000a', 'Tablet');
+  if length(t ->> 'token') < 64 then raise exception 'FAIL child token too short'; end if;
+  insert into _kid values (t ->> 'token', (t ->> 'id')::uuid);
+  begin
+    perform public.rpc_create_child_token('c0000000-0000-4000-8000-00000000000b', null);
+    raise exception 'FAIL parent A created a token for child B';
+  exception when insufficient_privilege then null;
+  end;
+  begin
+    perform token_hash from public.child_tokens;
+    raise exception 'FAIL parent can read child token hashes';
+  exception when insufficient_privilege then null;
+  end;
+  begin
+    perform public.rpc_resolve_child_token((select token from _kid));
+    raise exception 'FAIL signed-in user resolved a child token';
+  exception when insufficient_privilege then null;
+  end;
+  if (select count(*) from public.child_tokens) <> 1 then raise exception 'FAIL parent A should list own child token'; end if;
+end $$;
+reset role;
+
+select set_config('request.jwt.claims', '{"sub":"b0000000-0000-4000-8000-000000000001","role":"authenticated"}', true);
+set local role authenticated;
+do $$
+begin
+  if exists (select 1 from public.child_tokens) then raise exception 'FAIL parent B sees family A child tokens'; end if;
+  begin
+    perform public.rpc_revoke_child_token((select id from _kid));
+    raise exception 'FAIL parent B revoked family A token';
+  exception when insufficient_privilege then null;
+  end;
+end $$;
+reset role;
+
+select set_config('request.jwt.claims', '{"role":"service_role"}', true);
+set local role service_role;
+do $$
+declare
+  r jsonb;
+begin
+  r := public.rpc_resolve_child_token((select token from _kid));
+  if r -> 'child' ->> 'first_name' <> 'Anu' then raise exception 'FAIL service could not resolve child token'; end if;
+  if public.rpc_resolve_child_token('not-a-token') is not null then raise exception 'FAIL bogus token resolved'; end if;
+end $$;
+reset role;
+
+select set_config('request.jwt.claims', '{"sub":"a0000000-0000-4000-8000-000000000001","role":"authenticated"}', true);
+set local role authenticated;
+select public.rpc_revoke_child_token((select id from _kid));
+reset role;
+
+select set_config('request.jwt.claims', '{"role":"service_role"}', true);
+set local role service_role;
+do $$
+begin
+  if public.rpc_resolve_child_token((select token from _kid)) is not null then
+    raise exception 'FAIL revoked child token still resolves';
+  end if;
+end $$;
+reset role;
+
 -- ── Parent cannot call the admin overview ────────────────────────────────
 select set_config('request.jwt.claims', '{"sub":"a0000000-0000-4000-8000-000000000001","role":"authenticated"}', true);
 set local role authenticated;

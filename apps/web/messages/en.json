@@ -1,0 +1,209 @@
+{
+  "common": {
+    "appName": "DuDu",
+    "tagline": "Your AI Buddy",
+    "signOut": "Sign out",
+    "back": "Back",
+    "language": "Language",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "loading": "Loading…",
+    "retry": "Try again",
+    "skipToContent": "Skip to content",
+    "mainNav": "Main navigation",
+    "account": "Account"
+  },
+  "nav": {
+    "home": "Home",
+    "study": "Study",
+    "reminders": "Reminders",
+    "monitor": "Monitor",
+    "homework": "Homework",
+    "report": "Report",
+    "library": "Library",
+    "settings": "Settings",
+    "more": "More"
+  },
+  "auth": {
+    "parentTitle": "Welcome to DuDu",
+    "parentSubtitle": "Sign in to look after your child's DuDu.",
+    "phoneLabel": "Mobile number",
+    "phonePlaceholder": "98765 43210",
+    "sendCode": "Send code",
+    "codeSentTo": "We sent a 6-digit code to {phone}.",
+    "codeLabel": "6-digit code",
+    "verify": "Verify and continue",
+    "changeNumber": "Change number",
+    "resend": "Resend code",
+    "resendIn": "Resend in {seconds}s",
+    "or": "or",
+    "google": "Continue with Google",
+    "invalidPhone": "Enter a valid 10-digit Indian mobile number.",
+    "invalidCode": "Enter the 6-digit code from the SMS.",
+    "genericError": "Something went wrong. Please try again.",
+    "terms": "By continuing you agree to our Terms and Privacy Policy.",
+    "devTitle": "Developer sign-in",
+    "email": "Email",
+    "password": "Password",
+    "signIn": "Sign in",
+    "callbackError": "That sign-in link didn't work. Please try again."
+  },
+  "home": {
+    "greetingMorning": "Good morning, {name}",
+    "greetingAfternoon": "Good afternoon, {name}",
+    "greetingEvening": "Good evening, {name}",
+    "noFamilyTitle": "Let's set up DuDu",
+    "noFamilyBody": "Pair your DuDu to see your child's day here.",
+    "pairCta": "Pair DuDu",
+    "noDevice": "No DuDu is paired with {name} yet.",
+    "childSwitcher": "Child",
+    "deviceTitle": "DuDu",
+    "status": {
+      "provisioned": "Not paired",
+      "paired": "Paired",
+      "online": "Online",
+      "sleeping": "Sleeping",
+      "offline": "Offline"
+    },
+    "battery": "Battery",
+    "wifi": "Wi‑Fi",
+    "volume": "Volume",
+    "wifiStrong": "Strong",
+    "wifiGood": "Good",
+    "wifiWeak": "Weak",
+    "mode": "Mode",
+    "modeStudy": "Study",
+    "modeFun": "Fun",
+    "todayPlan": "Today's plan",
+    "noSchedule": "Nothing planned for today.",
+    "reminders": "Reminders",
+    "noReminders": "No reminders today.",
+    "stars": "Stars",
+    "streak": "Day streak",
+    "focusToday": "Focus today",
+    "minutes": "{n} min",
+    "latestHomework": "Latest homework",
+    "noHomework": "No homework checked yet.",
+    "result": {
+      "correct": "Correct",
+      "retry": "Try again",
+      "partial": "Partly right",
+      "explained": "Explained"
+    }
+  },
+  "pages": {
+    "study": {
+      "title": "Study",
+      "description": "Class and subjects, weekly study hours and focus rules."
+    },
+    "reminders": {
+      "title": "Reminders",
+      "description": "Today's reminders, the weekly timetable and repeating reminders."
+    },
+    "monitor": {
+      "title": "Monitor",
+      "description": "Desk presence today and photos DuDu took on request. DuDu announces every photo."
+    },
+    "homework": {
+      "title": "Homework",
+      "description": "Homework DuDu checked, with explanations and results."
+    },
+    "report": {
+      "title": "Weekly report",
+      "description": "Study minutes, questions asked, quiz scores and insights."
+    },
+    "library": {
+      "title": "Library",
+      "description": "Stories, music and games DuDu can play."
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "Child profile, parental controls, device and billing."
+    },
+    "more": {
+      "title": "More",
+      "description": "Everything else in the DuDu app."
+    },
+    "emptyTitle": "Nothing here yet",
+    "emptyBody": "DuDu will fill this in as your child uses it."
+  },
+  "kid": {
+    "welcomeTitle": "Hi! I'm DuDu.",
+    "welcomeBody": "Ask a grown-up to open your DuDu link on this screen.",
+    "invalidLink": "This link doesn't work any more. Ask a grown-up for a new one.",
+    "hello": "Hi {name}!",
+    "ready": "Ready for today's mission?",
+    "mission": "Today's mission",
+    "quiz": "Quiz time",
+    "quizBody": "Answer questions and win stars.",
+    "homework": "My homework",
+    "homeworkBody": "See what DuDu explained.",
+    "stars": "{n} stars",
+    "streak": "{n}-day streak",
+    "badges": "Badges",
+    "notYou": "Not you? Ask a grown-up",
+    "back": "Back"
+  },
+  "admin": {
+    "title": "DuDu Admin",
+    "nav": {
+      "overview": "Overview",
+      "devices": "Devices",
+      "families": "Families",
+      "content": "Content",
+      "subscriptions": "Subscriptions",
+      "aiUsage": "AI usage & cost",
+      "safety": "Safety & flags"
+    },
+    "roles": {
+      "owner": "Owner",
+      "ops": "Ops",
+      "content": "Content",
+      "support": "Support",
+      "parent": "Parent"
+    },
+    "login": {
+      "title": "DuDu Admin",
+      "subtitle": "Invitation only. Use your work Google account or a magic link.",
+      "google": "Continue with Google",
+      "emailLabel": "Work email",
+      "sendLink": "Email me a magic link",
+      "linkSent": "Check {email} for a sign-in link.",
+      "notAuthorized": "This account doesn't have admin access. Ask an owner to invite you.",
+      "notInvited": "That email hasn't been invited. Ask an owner to invite you.",
+      "switchAccount": "Signed in as {who}. Use a different account"
+    },
+    "overview": {
+      "title": "Overview",
+      "description": "Fleet, families and AI cost for the last 30 days.",
+      "activeDevices": "Active devices (24 h)",
+      "dau": "Daily active children",
+      "paidSubs": "Paid subscriptions",
+      "aiCostPerDevice": "AI cost / device (30 d)",
+      "needsAttention": "Needs attention",
+      "offlineDevices": "{n} paired devices offline for over 24 h",
+      "openReviews": "{n} open safety reviews ({high} high)",
+      "trialsEnding": "{n} trials ending in 3 days"
+    },
+    "pages": {
+      "devices": "Device fleet, firmware and remote actions.",
+      "families": "Families, plans, support notes and privacy requests.",
+      "content": "Syllabus packs, tutor prompts, model routing and the media library.",
+      "subscriptions": "Plans, renewals and payments.",
+      "aiUsage": "Daily AI spend by service and budget alerts.",
+      "safety": "Safety review queue and filter rules."
+    },
+    "signedInAs": "Signed in as"
+  },
+  "pair": {
+    "title": "Pair DuDu",
+    "description": "Enter the 6-digit code shown on DuDu's screen.",
+    "codeLabel": "Pairing code",
+    "submit": "Pair DuDu",
+    "invalid": "That code didn't work. Check DuDu's screen — codes expire after 15 minutes.",
+    "taken": "This DuDu is already paired with another family.",
+    "success": "DuDu is paired!",
+    "goHome": "Go to Home"
+  }
+}

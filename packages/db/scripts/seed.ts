@@ -2,7 +2,8 @@
  * Seed the linked Supabase project with demo data.
  *   pnpm --filter @dudu/db seed
  * Reads NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, GATEWAY_DEVICE_SECRET_PEPPER from .env.local.
- * Optional: SEED_OWNER_EMAIL (your Google/magic-link email for the owner admin), SEED_PARENT_PASSWORD.
+ * Optional: SEED_OWNER_EMAIL (your Google/magic-link email for the owner admin),
+ *           SEED_TEST_PASSWORD (password for the synthetic @dudu.local accounts, used by dev login + Playwright).
  * Device secrets are regenerated on every run and written to packages/db/.seed-devices.local.json (gitignored).
  */
 import { existsSync, writeFileSync } from "node:fs";
@@ -31,8 +32,12 @@ const sb = createServiceClient();
 console.info(
   `Seeding Supabase project ${projectRefFromUrl(process.env.NEXT_PUBLIC_SUPABASE_URL!)} …`,
 );
-await applySeed(data, supabaseSink(sb, { parentPassword: process.env.SEED_PARENT_PASSWORD }), (m) =>
-  console.info("  " + m),
+await applySeed(
+  data,
+  supabaseSink(sb, {
+    testPassword: process.env.SEED_TEST_PASSWORD || process.env.SEED_PARENT_PASSWORD,
+  }),
+  (m) => console.info("  " + m),
 );
 
 const out = join(DB_ROOT, ".seed-devices.local.json");
