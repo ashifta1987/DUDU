@@ -28,3 +28,6 @@ playwright/.cache/
 *.log
 .vercel
 .fly
+
+# seed output (dev device secrets)
+packages/db/.seed-devices.local.json

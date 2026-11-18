@@ -1,0 +1,12 @@
+# Supabase CLI config for the DuDu database package.
+# Migrations live in ../migrations (symlinked as ./migrations).
+# Remote project: hhfczwecdgdfxgxalsfl — link with `npx supabase link --project-ref hhfczwecdgdfxgxalsfl`.
+project_id = "dudu"
+
+[db.seed]
+# Demo data is loaded with `pnpm --filter @dudu/db seed` (TypeScript, via the service role).
+enabled = false
+
+[auth]
+site_url = "http://localhost:3100"
+additional_redirect_urls = ["http://localhost:3000", "http://localhost:3100"]
